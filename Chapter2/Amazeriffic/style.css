@@ -1,0 +1,102 @@
+* {
+  font-family: 'Denk One', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f9e933;
+}
+
+header, main, footer {
+  min-width: 100%;
+}
+
+header .container, main .container, footer .container {
+  max-width: 100%;
+  margin: 0;
+}
+
+a, .contact p:nth-child(2) {
+  color:red;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  position: fixed;
+  height: 10%;
+  background: white;
+  overflow: auto;
+  top:0;
+  left:0;
+  right:0;
+  bottom: auto;
+  padding-left: 1em;
+}
+
+header h1 {
+  color:red;
+  display: inline;
+}
+
+header nav {
+  float: right;
+  width: 30%;
+  display: inline;
+}
+
+main {
+  background: white;
+  overflow: auto;
+  display: block;
+  position: fixed;
+  height: 70%;
+  top:10%;
+  left:0;
+  right:0;
+  bottom:auto;
+  padding-left: 1em;
+  border-top-style: ridge;
+}
+
+main .left {
+  float: left;
+  width: 70%;
+}
+
+main .right {
+  float: right;
+  width: 30%;
+}
+
+footer {
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  top:auto;
+  overflow: auto;
+}
+
+footer .contact {
+  float: left;
+  display: inline;
+  padding-left: 1em;
+}
+
+footer .sitemap {
+  float: right;
+  display: inline;
+  padding-right: 5em;
+}
+
+.sitemap ul {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  -ms-column-count: 2;
+  column-count: 2;
+}
