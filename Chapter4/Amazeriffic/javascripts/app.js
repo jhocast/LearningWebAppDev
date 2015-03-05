@@ -6,6 +6,12 @@ var main = function () {
                  "Take Gracie to the park",
                  "Finish writing this book"];
 
+    var imageFiles = [  "content/add.png", 
+                        "content/addingNewEntry.png",
+                        "content/newestTab.png",
+                        "content/older.png",
+                        "content/resultOfEntry.png"];
+
     $(".tabs a span").toArray().forEach(function (element) {
         var $element = $(element);
 
@@ -48,12 +54,33 @@ var main = function () {
                 $content = $("<div>").append($input).append($button);
                /* Alternatively append() allows multiple arguments so the above
                 can be done with $content = $("<div>").append($input, $button); */
+            } else {
+                $content = $("<ul>");
+                imageFiles.forEach(function (imageFile) {
+                    console.log(imageFile)
+                    $content.append($("<p>"));
+                    $content.append($("<a href='" + imageFile + "' class='group4'>").text(imageFile));
+                });
             }
 
             $("main .content").append($content);
 
             return false;
         });
+    });
+
+    console.log("Going thru the bottom");
+    $(".group4").colorbox({rel:'group4', slideshow:true, width:"75%", height:"75%"});
+    $(".callbacks").colorbox({
+        onOpen:function(){ alert('onOpen: colorbox is about to open'); },
+        onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
+        onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content'); },
+        onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
+        onClosed:function(){ alert('onClosed: colorbox has completely closed'); }
+    });
+    $("#click").click(function(){ 
+        $('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+        return false;
     });
 
     $(".tabs a:first-child span").trigger("click");
